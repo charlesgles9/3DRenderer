@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	   <meta http-equiv="Context-type" content="text/html; charset=utf8">
+   <title>3D Renderer</title>
+  
+  <style>
+  body{
+	  background-color:black;
+	  width:100%;
+	  height:100%;
+	  overflow:hidden;
+	  display:block;
+	  
+  }
+  canvas{
+	  position:absolute;
+	  border:5px solid blue;
+  }
+ p{
+	 font-size:60%;
+	 color:white;
+	 width:auto;
+	 height:5px;
+ }
+ h1{
+	 height:10px;
+	 width:60%;
+	 color:red;
+ }
+ div{
+	display:inline-block;
+	border:2px solid white;
+	margin:5px;
+	padding:5px;
+	 
+ }
+ input[type='checkbox']{
+	 outline:2px solid blue;
+	 -moz-appearance:none;
+	 margin:10px;
+	 width:30px;
+	 height:30px;
+	 
+ }
+ input[type='checkbox']:checked{
+	 outline:2px solid blue;
+	 -moz-appearance:none;
+	 margin:10px;
+	 width:30px;
+	 height:30px;
+	 color:black;
+	 content:'on';
+	 background-color:white;
+ }
+
+  </style>
+   </head>
+<body>
+
+<div>
+ <p >Light Intensity X</p>
+ <input onclick="setIllumination(this,'0')"type="range" max="100" min="0" value="50" id="illuminationX"/>
+ <p >Light Intensity Y</p>
+ <input onclick="setIllumination(this,'1')"type="range" max="100" min="0" value="50" id="illuminationY"/>
+ <p >Light Intensity Z</p>
+ <input onclick="setIllumination(this,'2')"type="range" max="100" min="0" value="50" id="illuminationZ"/>
+
+ <p>Show WireFrame</p>
+ <input onclick="toggleWireFrame(this)"type="checkbox" id="wireframe">
+  <h1> HELP </h1><br>
+ <p> use W to move camera upwards </p>
+ <p> use S to move camera downwards</p>
+ <p> use A to move camera left </p>
+ <p> use D to move camera right </p>
+ <p> use Z to move camera foward </p>
+ <p> use X to move camera back </p>
+</div>
+ <canvas  id="canvas" width="850" height="480" ></canvas>
+  
+ <script type="text/javascript" src="scripts/temp/asteroid.js"></script> 
+ <script type="text/javascript" src="scripts/math/vector.js"></script>
+ <script type="text/javascript" src="scripts/utils/loader.js"></script>
+ <script type="text/javascript" src="scripts/math/matrix.js"></script>
+ <script type="text/javascript" src="scripts/math/color.js"></script>
+ <script type="text/javascript" src="scripts/objects.js"></script>
+ <script type="text/javascript" src="scripts/renderer.js"></script>
+ <script type="text/javascript" src="scripts/main.js"></script> 
+</body>
+</html>
